@@ -10,8 +10,6 @@ public class Produto {
     }
 
     public String etiquetaPreco() {
-        System.out.println("Nome: " + this.nome);
-        System.out.println("Preco: " + this.preco);
-        return this.nome;
+        return nome + " R$ " + String.format("%.2f", preco);
     }
 }

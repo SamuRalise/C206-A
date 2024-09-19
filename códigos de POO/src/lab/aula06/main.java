@@ -2,20 +2,20 @@ package lab.aula06;
 
 public class main {
     public static void main(String[] args) {
-        Produto[] produto = new Produto[10];
-        Notebook note = new Notebook("acer", 1000, 500, "grande kkkk", "razer");
-        Camiseta camiseta = new Camiseta("De rock", 100, "preta", "M");
+        Produto[] produtos = new Produto[10];
 
-        produto[0] = note;
-        produto[1] = camiseta;
+        produtos[0] = new Notebook("Notebook", 2500.0, 512, "GTX 1050", "i5");
+        produtos[1] = new Camiseta("Camiseta", 50.0, "Azul", "M");
+        produtos[2] = new Produto("Mesa", 300.0);
 
-        for (int i = 0; i < produto.length; i++) {
-            if (produto[i] != null) {
-                produto[i].etiquetaPreco();
+        for (Produto produto : produtos) {
+            if(produto instanceof Notebook) {
+                System.out.println("Notebook: " + produto.etiquetaPreco());
+            } else if(produto instanceof Camiseta) {
+                System.out.println("Camiseta: " + produto.etiquetaPreco());
+            } else {
+                System.out.println("Produto: " + produto.etiquetaPreco());
             }
         }
-
-
-
     }
 }

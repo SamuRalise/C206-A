@@ -9,4 +9,9 @@ public class Camiseta extends Produto{
         this.cor = cor;
         this.tamanho = tamanho;
     }
+
+    public String etiquetaPreco() {
+        return super.etiquetaPreco() + " " + cor + " " + tamanho;
+    }
+
 }
